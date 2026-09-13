@@ -6,7 +6,7 @@ export async function generateReport(): Promise<{ executionId: string }> {
   return data
 }
 
-export async function fetchReportStatus(executionId: string): Promise<ReportJob> {
-  const { data } = await client.get<ReportJob>(`/api/report/${executionId}/status`)
+export async function fetchReportStatus(executionId: string, signal?: AbortSignal): Promise<ReportJob> {
+  const { data } = await client.get<ReportJob>(`/api/report/${executionId}/status`, { signal })
   return data
 }

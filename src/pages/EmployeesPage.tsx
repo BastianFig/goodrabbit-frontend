@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useEmployees } from '../hooks/useEmployees'
 import EmployeeTable from '../components/EmployeeTable'
 import EmployeeFilters from '../components/EmployeeFilters'
+import ReportButton from '../components/ReportButton'
 import Spinner from '../components/ui/Spinner'
 import ErrorMessage from '../components/ui/ErrorMessage'
 
@@ -25,9 +26,12 @@ export default function EmployeesPage() {
     <div style={{ maxWidth: 1400, margin: '0 auto', padding: '24px 40px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
         <h1 style={{ margin: 0, color: '#1e40af' }}>Empleados</h1>
-        <button onClick={handleLogout} style={{ padding: '8px 16px', cursor: 'pointer' }}>
-          Cerrar sesión
-        </button>
+        <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+          <ReportButton />
+          <button onClick={handleLogout} style={{ padding: '8px 16px', cursor: 'pointer' }}>
+            Cerrar sesión
+          </button>
+        </div>
       </div>
 
       <EmployeeFilters employees={allEmployees} onFilterChange={setFilters} />
