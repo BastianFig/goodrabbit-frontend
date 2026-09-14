@@ -10,6 +10,9 @@ export default function LoginPage() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
+  const sessionExpired = sessionStorage.getItem('sessionExpired')
+  sessionStorage.removeItem('sessionExpired')
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError('')
@@ -53,6 +56,11 @@ export default function LoginPage() {
             style={{ width: '100%', padding: 8 }}
           />
         </div>
+        {sessionExpired && (
+          <p style={{ color: '#b45309', background: '#fef9c3', padding: '8px 12px', borderRadius: 6, marginBottom: 8 }}>
+            Tu sesión expiró. Inicia sesión nuevamente.
+          </p>
+        )}
         {error && <p style={{ color: 'red' }}>{error}</p>}
         <button type="submit" disabled={loading} style={{ width: '100%', padding: 8 }}>
           {loading ? 'Ingresando...' : 'Ingresar'}

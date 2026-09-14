@@ -16,8 +16,9 @@ client.interceptors.request.use(config => {
 client.interceptors.response.use(
   response => response,
   error => {
-    if (error.response?.status === 401) {  // Punto de control para manejar errores de autenticación.
-      localStorage.removeItem('token')   
+    if (error.response?.status === 401) {
+      localStorage.removeItem('token')
+      sessionStorage.setItem('sessionExpired', 'true')
       window.location.href = '/login'
     }
     return Promise.reject(error)
