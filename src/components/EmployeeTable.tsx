@@ -9,7 +9,9 @@ interface RowProps {
   employees: Employee[]
 }
 
-const ROW_HEIGHT = 48
+// de acuerdo a esto react-window va calculando cuando datos trae simultaneamente aproximadamente...
+
+const ROW_HEIGHT = 48 
 const TABLE_HEIGHT = 600
 
 const columns = [

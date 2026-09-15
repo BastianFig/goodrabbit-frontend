@@ -69,7 +69,7 @@ export default function ReportButton() {
         <p style={{ margin: 0, color: '#16a34a', fontWeight: 600 }}>
           Reporte generado exitosamente
         </p>
-        {report.result && (
+        {!!report.result && (
           <pre style={{
             margin: 0, padding: 12, borderRadius: 6,
             background: '#1e1e1e', color: '#d4d4d4',
