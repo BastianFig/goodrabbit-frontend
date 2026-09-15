@@ -90,13 +90,13 @@ En grandes dataset, serviria y es ahi donde quizá implementaria para darle feed
 
 ## Tests
 
-Los tests no fueron implementados. No fue por falta de tiempo sino porque 
-no tengo experiencia suficiente con Vitest y React Testing Library para 
-implementarlos correctamente y poder defenderlos.
+Los tests no fueron implementados por falta de tiempo para investigarlo 
+correctamente. Identifiqué qué habría que testear:
 
-Sé qué habría testeado:
 - `EmployeeTable` — que renderiza filas con datos mock y muestra el estado vacío
 - `useEmployees` — que el hook devuelve los datos mockeando axios
+
+pero no llegué a implementarlo.
 
 ---
 
